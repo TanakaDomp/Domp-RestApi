@@ -1,0 +1,370 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "nextjs",
+    "title": "Domp-Api's",
+    "description": "Welcome to my rest api",
+    "contact": {
+      "name": "Source Code",
+      "url": "https://github.com/TanakaDomp"
+    }
+  },
+  "paths": {
+    "/api/openai/open-ai": {
+      "get": {
+        "summary": "",
+        "description": "OpenAi",
+        "tags": [
+          "Openai"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "`question`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Hello!"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/downloader/tiktokdl": {
+      "get": {
+        "summary": "",
+        "description": "Tiktok DL",
+        "tags": [
+          "Downloader"
+        ],
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "`Input Urls`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "https://vt.tiktok.com/ZSjunPJbq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/downloader/snackvideo": {
+      "get": {
+        "summary": "",
+        "description": "SnackVideo DL",
+        "tags": [
+          "Downloader"
+        ],
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "`Input Urls`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "https://www.snackvideo.com/@kwai/video/5220947973376348003?pwa_source=web_share"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },    
+    "/api/downloader/xnxxdl": {
+      "get": {
+        "summary": "",
+        "description": "XnxxDL",
+        "tags": [
+          "Downloader"
+        ],
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "`Input Urls`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "https://www.xnxx.com/video-188omt93/stepsister_enjoys_cosplay_pussybanging_with_stepbrother"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },    
+    "/api/stalker/ttstalk": {
+      "get": {
+        "summary": "",
+        "description": "tiktok stalker with username",
+        "tags": [
+          "Stalker"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "`Try Input Username Tiktok`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "iqstore78"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stalker/npmstalk": {
+      "post": {
+        "summary": "",
+        "description": "Try Input Package Name",
+        "tags": [
+          "Stalker"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Try Input Package Name",
+                    "example": "axios"
+                  }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stalker/igstalk": {
+      "post": {
+        "summary": "",
+        "description": "instagram stalker with username",
+        "tags": [
+          "Stalker"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "description": "Try Input Username Instagram",
+                    "example": "iqstore78"
+                  }
+                },
+                "required": ["username"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/say": {
+      "get": {
+        "summary": "",
+        "description": "test server",
+        "tags": [
+          "Testings"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "`Try Say Hello World`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Hello World!"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

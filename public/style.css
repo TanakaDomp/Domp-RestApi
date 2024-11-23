@@ -1,0 +1,22 @@
+/*
+  { custom style }
+  { https://nyimpen.vercel.app/component/swagger-ungu.css }
+*/
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+.swagger-ui .topbar { 
+    display: none; 
+}
+.swagger-ui .info a[href$="swg.json"] { 
+    display: none; 
+}
+.swagger-ui .scheme-container {
+    background-color: transparent;
+}
+
+/** biar susah lu debug json nya😂 **/
+.swagger-ui .messages .schemaValidationMessages {
+    display: none; 
+}
