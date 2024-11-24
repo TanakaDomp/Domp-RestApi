@@ -1,6 +1,5 @@
 import axios from "axios"
-import cheerio from "cheerio"
-import fetch from "node-fetch"
+import * as cheerio from "cheerio"
 
 
 export default async function handler(req, res) {
