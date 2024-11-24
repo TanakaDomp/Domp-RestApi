@@ -10,16 +10,7 @@ export default async function handler(req, res) {
   if (!q) {
     return res.status(400).json({ error: q.msg.qUrl })
   }
-  const result = await songSearch(q);
-  if (result.status === "error") {
-    return res.status(500).json(result)
-  }
-  res.status(200).json(result)
-}
-
-
-
-async function songSearch(query) {
+  async function songSearch(query) {
         try {
             const { data } = await axios.get("https://songsear.ch/q/" + query);
             const $ = cheerio.load(data);
@@ -56,4 +47,10 @@ async function songSearch(query) {
                 error: "Unknown error occurred",
             };
         }
+  }  
+  const result = await songSearch(q);
+  if (result.status === "error") {
+    return res.status(500).json(result)
+  }
+  res.status(200).json(result)
 }
