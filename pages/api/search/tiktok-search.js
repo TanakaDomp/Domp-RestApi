@@ -8,14 +8,14 @@ export default async function handler(req, res) {
   if (!q) {
     return res.status(400).json({ error: q.msg.qUrl })
   }
-  const result = await tiktoks(q);
+  const result = await tiktoksearch(q);
   if (result.status === "error") {
     return res.status(500).json(result)
   }
   res.status(200).json(result)
 }
 
-async function tiktoks(query) {
+async function tiktoksearch(query) {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await axios({
@@ -41,7 +41,6 @@ async function tiktoks(query) {
         const videorndm = videos[gywee]; 
 
         const result = {
-        creator: "@tanakadomp",
           title: videorndm.title,
           cover: videorndm.cover,
           origin_cover: videorndm.origin_cover,
