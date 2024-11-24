@@ -224,7 +224,50 @@
           }
         }
       }
-    },    
+    }, 
+    "/api/search/lirik": {
+      "get": {
+        "summary": "",
+        "description": "Lirik Search",
+        "tags": [
+          "Search"
+        ],
+        "parameters": [
+          {
+            "name": "Query",
+            "in": "query",
+            "description": "`Input Query`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Lantas"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },               
     "/api/search/tiktok-search": {
       "get": {
         "summary": "",
