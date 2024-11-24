@@ -26,7 +26,6 @@ async function snack(urls) {
   const attr = $("div.action")
   
   const data = {
-  creator: "@tanakadomp",
     title: $(author).find("div.author-desc > span").children("span").eq(0).text().trim(),
     thumbnail: $(video).parent().siblings("div.background-mask").children("img").attr("src"),
     media: $(video).attr("src"),
