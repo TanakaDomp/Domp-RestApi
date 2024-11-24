@@ -96,6 +96,49 @@
         }
       }
     },
+    "/api/downloader/spotifydl": {
+      "get": {
+        "summary": "",
+        "description": "Spotify DL",
+        "tags": [
+          "Downloader"
+        ],
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "`Input Urls`",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "Urls"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "parameter format not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },        
     "/api/downloader/snackvideo": {
       "get": {
         "summary": "",
