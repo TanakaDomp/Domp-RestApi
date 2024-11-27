@@ -10,14 +10,16 @@ export default async function handler(req, res) {
   if (!url) {
     return res.status(400).json({ error: q.msg.qUrl })
   }
-  const result = await snack(url)
+  const result = await snakcDL(url)
   if (result.status === "error") {
     return res.status(500).json(result)
   }
   res.status(200).json(result)
 }
 
-async function snack(urls) {
+async function snakcDL(urls) {
+  return new Promise(async (resolve, reject) => {
+    try {
   const res = await fetch(urls)
   const body = await res.text()
   const $ = cheerio.load(body)
@@ -25,7 +27,7 @@ async function snack(urls) {
   const author = $("div.author-info")
   const attr = $("div.action")
   
-  const data = {
+  const result = {
     title: $(author).find("div.author-desc > span").children("span").eq(0).text().trim(),
     thumbnail: $(video).parent().siblings("div.background-mask").children("img").attr("src"),
     media: $(video).attr("src"),
@@ -35,5 +37,9 @@ async function snack(urls) {
     comment: $(attr).find("div.common").eq(1).text().trim(),
     share: $(attr).find("div.common").eq(2).text().trim(),
   }
-  return data
+    resolve({ creator: '@tanakadomp', status: true, result });
+    } catch (error) {
+      reject(error);
+    }
+  });
 }
