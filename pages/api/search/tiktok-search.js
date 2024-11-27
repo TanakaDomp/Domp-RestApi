@@ -19,6 +19,8 @@ export default async function handler(req, res) {
 }
 
 async function tiktokSearch(query) {
+  return new Promise(async (resolve, reject) => {
+    try {
   const response = await axios({
     method: 'POST',
     url: 'https://tikwm.com/api/feed/search',
@@ -44,7 +46,7 @@ async function tiktokSearch(query) {
   const randomIndex = Math.floor(Math.random() * videos.length);
   const videorndm = videos[randomIndex];
 
-  return {
+        const result = {
     title: videorndm.title,
     cover: videorndm.cover,
     origin_cover: videorndm.origin_cover,
@@ -52,4 +54,9 @@ async function tiktokSearch(query) {
     watermark: videorndm.wmplay,
     music: videorndm.music
   };
+   resolve({ creator: '@tanakadomp', status: true, result });  
+  } catch (error) {
+      reject(error);
+    }
+  });
 }
