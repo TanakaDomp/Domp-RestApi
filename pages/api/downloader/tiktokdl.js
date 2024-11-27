@@ -41,7 +41,7 @@ encodedParams.set('hd', '1');
           watermark: videos.wmplay,
           music: videos.music
         };
-        resolve(result);
+        resolve({ creator: '@tanakadomp', status: true, result });
     } catch (error) {
       reject(error);
     }
